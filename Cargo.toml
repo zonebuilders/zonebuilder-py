@@ -1,0 +1,18 @@
+[package]
+name = "zonebuilder-py"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+zonebuilder = "0.1.0"
+
+
+[lib]
+name = "zonebuilder_py"
+crate-type = ["cdylib"]
+
+[dependencies.pyo3]
+version = "0.15.1"
+features = ["extension-module"]
