@@ -43,11 +43,11 @@ impl Pyparams {
 
 #[pyfunction(kwargs = "**")]
 fn kwargsparse(kwargs: Option<&PyDict>) -> PyResult<Pyparams> {
+    let defaults = Pyparams::default();
     if kwargs.is_none() {
-        return Ok(Pyparams::default())
+        return Ok(defaults);
     }
     let udict = kwargs.unwrap();
-    let defaults = Params::default();
     let params = Pyparams {
         num_segments: match udict.get_item("num_segments") {
             Some(value) => value.extract()?,
