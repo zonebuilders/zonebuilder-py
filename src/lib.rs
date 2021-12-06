@@ -1,8 +1,7 @@
 #[allow(unused)]
 use geo::{map_coords::MapCoordsInplace, Point};
 use pyo3::{prelude::*, types::PyDict, Python};
-use pythonize::pythonize;
-use zonebuilder::{self, Params};
+use zonebuilder::Params;
 
 #[pyfunction]
 fn triangular_sequence(n: usize) -> Vec<f64> {
@@ -20,12 +19,13 @@ struct Pyparams {
 }
 impl Default for Pyparams {
     fn default() -> Self {
+        let defaults = Params::default();
         Pyparams {
-            num_segments: 12,
-            distances: triangular_sequence(5),
-            num_vertices_arc: 10,
-            precision: 6,
-            projected: false,
+            num_segments: defaults.num_segments,
+            distances: defaults.distances,
+            num_vertices_arc: defaults.num_vertices_arc,
+            precision: defaults.precision,
+            projected: defaults.projected,
         }
     }
 }
@@ -74,20 +74,16 @@ fn kwargsparse(kwargs: Option<&PyDict>) -> PyResult<Pyparams> {
 }
 
 #[pyfunction]
-fn clockboard(center: [f64; 2], kwargs: Option<&PyDict>) -> PyResult<PyObject> {
+fn clockboard(center: [f64; 2], kwargs: Option<&PyDict>) -> PyResult<String> {
     let center_point = Point::new(center[0], center[1]);
     let params = kwargsparse(kwargs)?;
-    let clockboard = zonebuilder::clockboard(center_point, params.to_zb_params());
-    let gil = Python::acquire_gil();
-    let py = gil.python();
-    Ok(pythonize(py, &clockboard)?)
+    let geojson = zonebuilder::clockboard(center_point, params.to_zb_params()).to_string();
+    Ok(geojson)
 }
 
 #[pymodule]
 fn zonebuilder_py(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(triangular_sequence, m)?)?;
-    m.add_function(wrap_pyfunction!(kwargsparse, m)?)?;
-    // m.add_class::<Params>()?;
     m.add_function(wrap_pyfunction!(clockboard, m)?)?;
     Ok(())
 }

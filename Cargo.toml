@@ -10,7 +10,6 @@ edition = "2021"
 zonebuilder = { git = "https://github.com/zonebuilders/zonebuilder-rust/" }
 geojson = "0.22.2"
 geo = "0.17.1"
-pythonize = "0.15.0"
 
 [lib]
 name = "zonebuilder_py"

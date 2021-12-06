@@ -408,16 +408,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "pythonize"
-version = "0.15.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "445529621b8801c031b9e43f12f543fdf64379584646f132d6dcf2731c814e03"
-dependencies = [
- "pyo3",
- "serde",
-]
-
-[[package]]
 name = "quote"
 version = "1.0.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -661,6 +651,5 @@ dependencies = [
  "geo",
  "geojson",
  "pyo3",
- "pythonize",
  "zonebuilder",
 ]
