@@ -1,5 +1,4 @@
-#[allow(unused)]
-use geo::{map_coords::MapCoordsInplace, Point};
+use geo::Point;
 use pyo3::{prelude::*, types::PyDict, Python};
 use zonebuilder::Params;
 
@@ -17,6 +16,7 @@ struct Pyparams {
     precision: usize,
     projected: bool,
 }
+
 impl Default for Pyparams {
     fn default() -> Self {
         let defaults = Params::default();
@@ -29,6 +29,7 @@ impl Default for Pyparams {
         }
     }
 }
+
 impl Pyparams {
     fn to_zb_params(&self) -> Params {
         Params {
