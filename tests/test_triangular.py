@@ -1,4 +1,4 @@
-import zonebuilder_py
+import zonebuilder
 import pytest
 
 
@@ -16,5 +16,5 @@ import pytest
     ],
 )
 def test_triangle(test_io):
-    output = zonebuilder_py.triangular_sequence(test_io["input"])
+    output = zonebuilder.triangular_sequence(test_io["input"])
     assert test_io["output"] == output

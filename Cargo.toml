@@ -12,7 +12,7 @@ geojson = "0.22.2"
 geo = "0.17.1"
 
 [lib]
-name = "zonebuilder_py"
+name = "zonebuilder"
 crate-type = ["cdylib"]
 
 [dependencies.pyo3]
