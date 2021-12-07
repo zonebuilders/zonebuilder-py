@@ -6,8 +6,10 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-zonebuilder = "0.1.0"
-
+# zonebuilder = "0.1.0"
+zonebuilder = { git = "https://github.com/zonebuilders/zonebuilder-rust/" }
+geojson = "0.22.2"
+geo = "0.17.1"
 
 [lib]
 name = "zonebuilder_py"
