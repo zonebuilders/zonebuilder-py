@@ -74,7 +74,7 @@ fn kwargsparse(kwargs: Option<&PyDict>) -> PyResult<Pyparams> {
     Ok(params)
 }
 
-#[pyfunction]
+#[pyfunction(kwargs = "**")]
 fn clockboard(center: [f64; 2], kwargs: Option<&PyDict>) -> PyResult<String> {
     let center_point = Point::new(center[0], center[1]);
     let params = kwargsparse(kwargs)?;
