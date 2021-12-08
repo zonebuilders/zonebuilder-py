@@ -17,6 +17,10 @@ pip install -r requirements.txt
 ```
 maturin develop
 ```
+alternately you can also
+```
+pip install .
+```
 4. Test it (somehow directly typing `pytest` throws error), use below
 ```
 python -m pytest
@@ -24,3 +28,4 @@ python -m pytest
 
 ### Current functions
 1. `triangular_sequence`
+2. `clockboard`
