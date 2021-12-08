@@ -74,7 +74,7 @@ fn kwargsparse(kwargs: Option<&PyDict>) -> PyResult<Pyparams> {
     Ok(params)
 }
 
-#[pyfunction]
+#[pyfunction(kwargs = "**")]
 fn clockboard(center: [f64; 2], kwargs: Option<&PyDict>) -> PyResult<String> {
     let center_point = Point::new(center[0], center[1]);
     let params = kwargsparse(kwargs)?;
@@ -83,7 +83,7 @@ fn clockboard(center: [f64; 2], kwargs: Option<&PyDict>) -> PyResult<String> {
 }
 
 #[pymodule]
-fn zonebuilder_py(_py: Python, m: &PyModule) -> PyResult<()> {
+fn zonebuilder(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(triangular_sequence, m)?)?;
     m.add_function(wrap_pyfunction!(clockboard, m)?)?;
     Ok(())
