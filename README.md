@@ -1,5 +1,5 @@
 # zonebuilder
-The goal of zonebuilder is to break up large geographic regions such as cities into manageable zones. Zoning systems are important in many fields, including demographics, economy, health, and transport. The zones have standard configuration, which enabled comparability across cities. See its website at [zonebuilders.github.io](https://zonebuilders.github.io).
+The goal of zonebuilder is to break up large geographic regions such as cities into manageable zones. Zoning systems are important in many fields, including demographics, economy, health, and transport. The zones have standard configuration, which enabled comparability across cities. See its website at [zonebuilders.github.io](https://zonebuilders.github.io/#1).
 Also checkout https://zonebuilders.github.io/zonebuilder-rust/ for visualization.
 This package provides the python bindings for [zonebuilder-rust](https://github.com/zonebuilders/zonebuilder-rust).
 
