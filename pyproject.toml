@@ -15,7 +15,7 @@ authors = [
 ]
 maintainers = [
     {name = "Dustin Carlino", email = "xxx@python.org"},
-    {name = "Robin Lovelace", email = "xxx@python.org"}
+    {name = "Robin Lovelace", email = "zonebuildersr@gmail.com"}
 ]
 [project.urls]
 Homepage = "https://github.com/zonebuilders/zonebuilder-py"
