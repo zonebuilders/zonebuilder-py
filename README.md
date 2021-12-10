@@ -45,7 +45,7 @@ geodataframe = geopandas.GeoDataFrame.from_features(featurecollection["features"
 ```
 ### Example
 Executing `clockboard([0,0])` will yield the 49 zones shown in the following figure centered on [0,0]:
-![image info](./images/default_clockboard.png)
+![image info](https://github.com/zonebuilders/zonebuilder-py/blob/main/images/default_clockboard.png)
 
 ## Dev-notes
 ### Installation
