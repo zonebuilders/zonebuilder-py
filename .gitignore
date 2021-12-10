@@ -132,3 +132,7 @@ dmypy.json
 # Added by cargo
 
 /target
+
+# Added by Pushkar
+test.json
+Untitled.ipynb
