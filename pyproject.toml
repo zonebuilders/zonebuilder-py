@@ -14,7 +14,7 @@ authors = [
     {name = "Pushkar Kopparla"}
 ]
 maintainers = [
-    {name = "Dustin Carlino", email = "xxx@python.org"},
+    {name = "Dustin Carlino", email = "dabreegster@gmail.com"},
     {name = "Robin Lovelace", email = "zonebuildersr@gmail.com"}
 ]
 [project.urls]
